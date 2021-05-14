@@ -14,8 +14,11 @@ Rails.application.routes.draw do
 
   patch "/articles/:id", to: "articles#update"
   
-  delete "/articles/:id", to: "articles#destroy"
+  delete "/articles/:id", to: "articles#destroy", as: :destroy_article
 
-  
+  #comments
+  post "/articles/:id/comments", to: "comments#create"
+
+  get "articles/:id/comments", to: "comments#show", as: :article_comments
   
 end
