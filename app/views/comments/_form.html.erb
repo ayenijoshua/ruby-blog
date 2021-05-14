@@ -7,6 +7,10 @@
     <%= form.label :body %><br>
     <%= form.text_area :body %>
   </p>
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+  </div>
   <p>
     <%= form.submit %>
   </p>

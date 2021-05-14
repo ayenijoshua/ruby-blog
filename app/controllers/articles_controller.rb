@@ -50,7 +50,7 @@ class ArticlesController < ApplicationController
   # parameter required for form submission
   private
     def article_params
-      params.require(:article).permit(:body, :title)
+      params.require(:article).permit(:body, :title, :status)
     end
 
   
