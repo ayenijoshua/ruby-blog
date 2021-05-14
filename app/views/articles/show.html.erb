@@ -1,0 +1,12 @@
+
+<div>
+    <h1><%= @article.title %> </h1>
+    <h1><%= @article.body %> </h1>
+</div>
+<div>
+    <%= link_to "Edit article", edit_article_path(@article) %>
+    <li><%= link_to "Destroy", article_path(@article),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</div>
+
