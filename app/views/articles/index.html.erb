@@ -1,9 +1,11 @@
 <html>
 <h1>Articles</h1>
+<p>Our blog has <%= Article.public_count %> articles and counting!</p>
 <ul>
     <% @articles.each do |article| %>
-        <li><a href="/articles/<%=article.id%>"><%= article.title %></a></li>
-        <li><%= article.body %></li>
+        <% unless article.archived? %>
+            <li><a href="/articles/<%=article.id%>"><%= article.title %></a></li>
+        <% end %>
     <% end %>
 </ul>
 <p><%= link_to "New Article", new_article_path %></p>

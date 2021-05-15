@@ -19,6 +19,12 @@ Rails.application.routes.draw do
   #comments
   post "/articles/:id/comments", to: "comments#create"
 
-  get "articles/:id/comments", to: "comments#show", as: :article_comments
+  get "articles/:id/comments", to: "article#comments", as: :article_comments
+
+  get "comments/:id", to: "comment#show", as: :comment
+
+  #delete "articles/:article_id/comments/:id", to: "comments#destroy", as: :article_comment
+
+  delete "/comments/:id", to: "comments#destroy"
   
 end

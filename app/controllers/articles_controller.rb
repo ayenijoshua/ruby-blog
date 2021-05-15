@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
 
   # blog index
   def index
@@ -38,6 +39,11 @@ class ArticlesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def comments
+    @article = Article.find(params[:id])
+    @comments = @article.comments.all
   end
 
   # destroy article
